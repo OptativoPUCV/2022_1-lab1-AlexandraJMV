@@ -105,3 +105,19 @@ exercises.c:90:11: error: function returns address of local variable [-Werror=re
 cc1.exe: all warnings being treated as errors
 Compilation failed
 0dac733
+vi., 11 de mar. de 2022 15:13:24: 
+In file included from test.c:5:0:
+exercises.c: In function 'crearPersona':
+exercises.c:60:14: error: return makes pointer from integer without a cast [-Werror=int-conversion]
+       return EXIT_FAILURE;
+              ^~~~~~~~~~~~
+exercises.c: In function 'crearVector':
+exercises.c:88:14: error: return makes pointer from integer without a cast [-Werror=int-conversion]
+       return EXIT_FAILURE;
+              ^~~~~~~~~~~~
+exercises.c:90:11: error: function returns address of local variable [-Werror=return-local-addr]
+    return &vctr;
+           ^~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+820cecf
