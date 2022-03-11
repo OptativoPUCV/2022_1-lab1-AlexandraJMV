@@ -12,7 +12,8 @@ y en c almacena el valor de la suma de a más b.
 */
 
 void suma(int a, int b, int * c) {
-    
+   *(c) = a + b;
+}
 
 /*
 Esta función suma los N primeros números del arreglo a
@@ -36,7 +37,7 @@ Utilice la función sumaN.
 */
 
 void sumaNultimos(int a[], int n, int m, int * suma) {
-
+   *(suma) = sumaN(a + (n - m), m);
 }
 
 /*
@@ -54,7 +55,15 @@ typedef struct {
 
 
 Persona* crearPersona(char nombre[], char rut[], int edad) {
-   return NULL;
+   Persona *newPersona = (Persona *) malloc (sizeof(Persona));
+   if (newPersona == NULL)
+      return EXIT_FAILURE;
+   
+   strcpy(newPersona->nombre, nombre);
+   newPersona->edad =  edad;
+   strcpy(newPersona->rut, rut);
+
+   return newPersona;
 }
 
 /*
@@ -71,7 +80,14 @@ typedef struct {
 } Vector;
 
 Vector * crearVector(int n) {
-   return NULL;
+   Vector vctr;
+   vctr.capacidad = n;
+   vctr.datos = (int *) calloc (n, sizeof(int));
+   
+   if (vctr.datos == NULL)
+      return EXIT_FAILURE;
+
+   return &vctr;
 }
 
 /*
