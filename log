@@ -167,3 +167,9 @@ exercises.c:124:28: error: unused variable 'vctrC' [-Werror=unused-variable]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 e86fe6f
+vi., 11 de mar. de 2022 16:44:54: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  8|0
+total_score: 70/70
+d8373c2
