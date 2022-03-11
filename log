@@ -132,3 +132,9 @@ exercises.c:104:16: error: return makes integer from pointer without a cast [-We
 cc1.exe: all warnings being treated as errors
 Compilation failed
 a1dd706
+vi., 11 de mar. de 2022 15:14:21: 
+ exercises.c | 2 --
+ 1 file changed, 2 deletions(-)
+ tests:  6|2
+total_score: 50/70
+a3b1593
