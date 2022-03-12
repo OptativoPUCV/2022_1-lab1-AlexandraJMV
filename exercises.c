@@ -22,7 +22,8 @@ int sumaN(int a[], int N) {
     int i;
     int tot = 0;
 
-    for(i = 0; i < N; i++) {
+    for(i = 0; i < N; i++) 
+    {
       tot += a[i];
     }
 
@@ -56,11 +57,16 @@ typedef struct {
 
 Persona* crearPersona(char nombre[], char rut[], int edad) {
    Persona *newPersona = (Persona *) malloc (sizeof(Persona));
-
-   strcpy(newPersona->nombre, nombre);
-   newPersona->edad =  edad;
-   strcpy(newPersona->rut, rut);
-
+   if (newPersona == NULL)
+   {
+      exit(1);
+   } 
+   else
+   {
+      strcpy(newPersona->nombre, nombre);
+      newPersona->edad =  edad;
+      strcpy(newPersona->rut, rut);
+   }
    return newPersona;
 }
 
@@ -79,9 +85,23 @@ typedef struct {
 
 Vector * crearVector(int n) {
    Vector *vctr = (Vector *) malloc (sizeof(Vector));
-   vctr->capacidad = n;
-   vctr->datos = (int *) calloc (n, sizeof(int));
-   return vctr;
+   if (vctr == NULL)
+   {
+      exit(1);
+   }
+   else
+   {
+      vctr->datos = (int *) calloc (n, sizeof(int));
+      if (vctr->datos == NULL)
+      {
+         exit(1);
+      }
+      else
+      {
+         vctr->capacidad = n; 
+         return vctr;
+      }
+   }
 }
 
 /*
@@ -122,14 +142,15 @@ sumar (a1,a2)+(b1+b2). Almacene el resultado en el vector c.
 */
 void sumaV2(int a1, int a2, int b1, int b2, Vector *c){
    Vector *vctrA, *vctrB;
+
    vctrA = crearVector(2);
    vctrB = crearVector(2);
 
-   vctrA->datos[0] = a1;
-   vctrA->datos[1] = a2;
+   asignarValor(vctrA->datos, 0, a1);
+   asignarValor(vctrA->datos, 1, a2);
 
-   vctrB->datos[0] = b1;
-   vctrB->datos[1] = b2;
+   asignarValor(vctrB->datos, 0, b1);
+   asignarValor(vctrB->datos, 1, b2);
 
    sumaV(vctrA, vctrB, c);
 }
