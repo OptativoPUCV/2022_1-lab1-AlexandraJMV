@@ -205,3 +205,9 @@ exercises.c:112:6: note: expected 'Vector * {aka struct <anonymous> *}' but argu
 cc1.exe: all warnings being treated as errors
 Compilation failed
 e26148f
+sá., 12 de mar. de 2022 19:34:33: 
+ exercises.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+ tests:  8|0
+total_score: 70/70
+7ce45e3
