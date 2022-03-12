@@ -56,18 +56,18 @@ typedef struct {
 
 
 Persona* crearPersona(char nombre[], char rut[], int edad) {
-   Persona *newPersona = (Persona *) malloc (sizeof(Persona));
-   if (newPersona == NULL)
+   Persona *new_persona = (Persona *) malloc (sizeof(Persona));
+   if (new_persona == NULL)
    {
       exit(1);
    } 
    else
    {
-      strcpy(newPersona->nombre, nombre);
-      newPersona->edad =  edad;
-      strcpy(newPersona->rut, rut);
+      strcpy(new_persona->nombre, nombre);
+      new_persona->edad =  edad;
+      strcpy(new_persona->rut, rut);
    }
-   return newPersona;
+   return new_persona;
 }
 
 /*
@@ -141,16 +141,16 @@ Use las operaciones implementadas de vectores para
 sumar (a1,a2)+(b1+b2). Almacene el resultado en el vector c.
 */
 void sumaV2(int a1, int a2, int b1, int b2, Vector *c){
-   Vector *vctrA, *vctrB;
+   Vector *vctr_a, *vctr_b;
 
-   vctrA = crearVector(2);
-   vctrB = crearVector(2);
+   vctr_a = crearVector(2);
+   vctr_b = crearVector(2);
 
-   asignarValor(vctrA, 0, a1);
-   asignarValor(vctrA, 1, a2);
+   asignarValor(vctr_a, 0, a1);
+   asignarValor(vctr_a, 1, a2);
 
-   asignarValor(vctrB, 0, b1);
-   asignarValor(vctrB, 1, b2);
+   asignarValor(vctr_b, 0, b1);
+   asignarValor(vctr_b, 1, b2);
 
-   sumaV(vctrA, vctrB, c);
+   sumaV(vctr_a, vctr_b, c);
 }
